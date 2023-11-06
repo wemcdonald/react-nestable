@@ -59,7 +59,11 @@ class Nestable extends Component<NestableProps, NestableState> {
     // make sure every item has property 'children'
     items = listWithChildren(items, childrenProp);
 
-    this.setState({ items });
+    this.setState({ items }, () => {
+      if (this.props.initialCollapsedItems) {
+        this.collapse(this.props.initialCollapsedItems);
+      }
+    });
   }
 
   componentDidUpdate(prevProps: NestableProps){
