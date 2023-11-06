@@ -254,10 +254,15 @@ var Nestable = /** @class */ (function (_super) {
         return _this;
     }
     Nestable.prototype.componentDidMount = function () {
+        var _this = this;
         var _a = this.props, items = _a.items, childrenProp = _a.childrenProp;
         // make sure every item has property 'children'
         items = (0, utils_1.listWithChildren)(items, childrenProp);
-        this.setState({ items: items });
+        this.setState({ items: items }, function () {
+            if (_this.props.initialCollapsedItems) {
+                _this.collapse(_this.props.initialCollapsedItems);
+            }
+        });
     };
     Nestable.prototype.componentDidUpdate = function (prevProps) {
         var _this = this;
@@ -544,6 +549,7 @@ var Nestable = /** @class */ (function (_super) {
             return String(item);
         },
         threshold: 30,
+        initialCollapsedItems: [],
     };
     return Nestable;
 }(react_1.Component));

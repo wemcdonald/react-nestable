@@ -51,6 +51,7 @@ class Nestable extends Component<NestableProps, NestableState> {
     onDragStart: () => {},
     renderItem: ({ item }) => String(item),
     threshold: 30,
+    initialCollapsedItems: [],
   };
 
   componentDidMount() {

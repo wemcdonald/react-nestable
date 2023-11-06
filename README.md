@@ -64,6 +64,7 @@ const Example = () => (
 | group | string or number | `random string` | Different group names may be passed if you have more than one nestable component on a page and want some extra styles for portal instances. |
 | handler | node | `undefined` | If you pass it, it will get wrapped with drag handlers and you may use it in your render method. |
 | idProp | string | `"id"` | Name of a property for id. |
+| initialCollapsedItems | string or array | `[]` | Same as `collapse()`: `"NONE"` - expand all groups; `"ALL"` - collapse all groups; `[]` - collapse all groups with ids from given array. |
 | items | array | `[]` | Array of items. Every item must be of shape `{id: @uniq}` to distinguish elements. |
 | maxDepth | number | `10` | Maximum available level of nesting. |
 | onChange | function | `() => {}` | Callback which has a single parameter with keys: `items` - new array after position was changed, `dragItem` - item which has been moved, `targetPath` - array of numbers, those numbers are indices and they make path to a location, to where item has been moved. |

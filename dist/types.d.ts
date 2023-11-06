@@ -18,6 +18,7 @@ export interface NestableProps {
     renderCollapseIcon?: RenderCollapseIcon;
     renderItem?: RenderItem;
     threshold?: number;
+    initialCollapsedItems?: CollapseCondition;
 }
 export interface NestableState {
     collapsedItems: unknown[];
